@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b70xb0e7n6key"]
+
+[ext_resource type="PackedScene" uid="uid://ni50ev8f35vg" path="res://assets/cartoon_plane.glb" id="1_lmeri"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gxfe3"]
+height = 3.65365
+radius = 0.965146
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pb5ao"]
+size = Vector3(7.00977, 0.323975, 1.38306)
+
+[node name="Plane" type="CharacterBody3D"]
+
+[node name="cartoon_plane" parent="." instance=ExtResource("1_lmeri")]
+
+[node name="Propeller" parent="cartoon_plane" index="4"]
+transform = Transform3D(0.992935, 0.118657, 0, -0.118657, 0.992935, 0, 0, 0, 1, 0, 0, 1.79873)
+
+[node name="AnimationPlayer" parent="cartoon_plane" index="6"]
+autoplay = "prop_spin"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_gxfe3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0707122, 0.560914)
+shape = SubResource("BoxShape3D_pb5ao")
+
+[editable path="cartoon_plane"]
