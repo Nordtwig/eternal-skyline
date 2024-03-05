@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn4hdhgl5pkgx"]
+
+[ext_resource type="Script" path="res://ui/title_screen.gd" id="1_07s0a"]
+[ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_n33p1"]
+[ext_resource type="FontFile" uid="uid://cnnsyj655eody" path="res://assets/Baloo2-Medium.ttf" id="2_515mq"]
+[ext_resource type="Texture2D" uid="uid://imccyuv51i7p" path="res://assets/buttons/play_button.png" id="3_0cb4h"]
+[ext_resource type="Texture2D" uid="uid://k5rk41fpefx1" path="res://assets/buttons/play_button_pr.png" id="4_ex57s"]
+[ext_resource type="Texture2D" uid="uid://b53mk6uh7immw" path="res://assets/buttons/play_button_h.png" id="5_dtadb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7vpl"]
+font = ExtResource("2_515mq")
+font_size = 128
+outline_size = 8
+outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_07s0a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1956.0
+offset_top = -360.0
+offset_right = 2140.0
+offset_bottom = 1688.0
+texture = ExtResource("1_n33p1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Eternal Skyline"
+label_settings = SubResource("LabelSettings_v7vpl")
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_0cb4h")
+texture_pressed = ExtResource("4_ex57s")
+texture_hover = ExtResource("5_dtadb")
+ignore_texture_size = true
+stretch_mode = 4

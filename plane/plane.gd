@@ -53,7 +53,6 @@ func _physics_process(delta) -> void:
         die()
     
     fuel -= fuel_burn * delta
-    print(fuel)
 
 
 # custom functions
@@ -73,6 +72,6 @@ func die() -> void:
     $Explosion.show()
     $Explosion.play("default")
     await $Explosion.animation_finished
+    print("explosion finished")
     $Explosion.hide()
     dead.emit()
-    get_tree().reload_current_scene()
