@@ -31,7 +31,7 @@ func add_buildings() -> void:
             var new_building = buildings[randi_range(0, buildings.size()-1)].instantiate()
             add_child(new_building)
             new_building.transform.origin.z = z_position
-            new_building.transform.x = 20 * side
+            new_building.transform.origin.x = 20 * side
             z_position -= new_building.get_node("MeshInstance3D").mesh.get_aabb().size.z
 
 
