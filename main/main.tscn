@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://tg1w73yo6uf"]
+[gd_scene load_steps=10 format=3 uid="uid://tg1w73yo6uf"]
 
 [ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_rfj8n"]
 [ext_resource type="Script" path="res://main/main.gd" id="1_vikct"]
 [ext_resource type="PackedScene" uid="uid://b70xb0e7n6key" path="res://plane/plane.tscn" id="2_gqj7v"]
 [ext_resource type="PackedScene" uid="uid://dc2ldedf80lc1" path="res://chunk/chunk.tscn" id="3_ldo1v"]
 [ext_resource type="Script" path="res://main/camera.gd" id="4_4r3ng"]
+[ext_resource type="PackedScene" uid="uid://dxo1n3slfdsh4" path="res://ui/ui.tscn" id="6_5w3du"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_td281"]
 panorama = ExtResource("1_rfj8n")
@@ -30,10 +31,12 @@ environment = SubResource("Environment_sutl2")
 
 [node name="Chunk" parent="." instance=ExtResource("3_ldo1v")]
 
-[node name="Plane" parent="." instance=ExtResource("2_gqj7v")]
+[node name="Plane" parent="." groups=["player"] instance=ExtResource("2_gqj7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("4_4r3ng")
 target_path = NodePath("../Plane")
 offset = Vector3(7, 7, 15)
+
+[node name="UI" parent="." instance=ExtResource("6_5w3du")]
