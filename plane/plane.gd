@@ -25,7 +25,7 @@ func _physics_process(delta) -> void:
 
 
 func get_input(delta: float) -> void:
-    pitch_input = Input.get_axis("pitch_down", "pitch_up")
+    pitch_input = Input.get_axis("pitch_up", "pitch_down")
     roll_input = Input.get_axis("roll_left", "roll_right")
 
     if position.y >= max_altitude and pitch_input > 0:

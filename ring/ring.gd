@@ -4,10 +4,28 @@ extends Area3D
 @export var center_bonus_modifier: float = 2.0
 @export var score: int = 100
 
+var move_x: bool = false
+var move_y: bool = false
+
+var move_amount: float = 2.5
+var move_speed: float = 2.0
+
+
 func _ready() -> void:
     body_entered.connect(on_body_entered)
     $Label3D.hide()
-    
+    var tween = create_tween().set_loops()\
+            .set_trans(Tween.TRANS_SINE)
+    tween.stop()
+    if move_y:
+        tween.tween_property($CollisionShape3D, "position:y", -move_amount, move_speed)
+        tween.tween_property($CollisionShape3D, "position:y", move_amount, move_speed)
+        tween.play()
+    if move_x:
+        tween.tween_property($CollisionShape3D, "position:x", -move_amount, move_speed)
+        tween.tween_property($CollisionShape3D, "position:x", move_amount, move_speed)
+        tween.play()
+
 
 func _process(delta) -> void:
     $CollisionShape3D/MeshInstance3D.rotate_y(deg_to_rad(50) * delta)

@@ -35,7 +35,6 @@ func add_buildings() -> void:
             z_position -= new_building.get_node("MeshInstance3D").mesh.get_aabb().size.z
 
 
-
 func add_obstacle_buildings() -> void:
     if level > 0:
         for z in range(0, -200, -20):
@@ -53,6 +52,17 @@ func add_rings()  -> void:
             var new_ring = ring.instantiate()
             new_ring.position.z = z
             new_ring.position.y = randf_range(3, 17)
+            match level:
+                0: 
+                    pass
+                1: 
+                    new_ring.move_y = true
+                2:
+                    new_ring.position.x = randf_range(-10, 10)
+                    new_ring.move_y = true
+                3:
+                    new_ring.position.x = randf_range(-10, 10)
+                    new_ring.move_x = true
             add_child(new_ring)
 
 
