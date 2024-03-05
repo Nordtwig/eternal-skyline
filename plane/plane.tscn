@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b70xb0e7n6key"]
+[gd_scene load_steps=11 format=3 uid="uid://b70xb0e7n6key"]
 
 [ext_resource type="PackedScene" uid="uid://ni50ev8f35vg" path="res://assets/cartoon_plane.glb" id="1_lmeri"]
 [ext_resource type="Script" path="res://plane/plane.gd" id="1_wxngh"]
+[ext_resource type="Texture2D" uid="uid://drev4lhtqgp4w" path="res://assets/smoke/smoke_01.png" id="3_tpbcq"]
+[ext_resource type="Texture2D" uid="uid://bna41s1b7e70x" path="res://assets/smoke/smoke_02.png" id="4_ecso8"]
+[ext_resource type="Texture2D" uid="uid://dit8qkb3opyiw" path="res://assets/smoke/smoke_03.png" id="5_d130k"]
+[ext_resource type="Texture2D" uid="uid://bs5smxbdmmvgi" path="res://assets/smoke/smoke_04.png" id="6_m5rwn"]
+[ext_resource type="Texture2D" uid="uid://cuyy40j0f3n8r" path="res://assets/smoke/smoke_05.png" id="7_tii4o"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gxfe3"]
 height = 3.65365
@@ -9,6 +14,29 @@ radius = 0.965146
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pb5ao"]
 size = Vector3(7.00977, 0.323975, 1.38306)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68du8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tpbcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ecso8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d130k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m5rwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tii4o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Plane" type="CharacterBody3D"]
 collision_layer = 2
@@ -30,5 +58,13 @@ shape = SubResource("CylinderShape3D_gxfe3")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0707122, 0.560914)
 shape = SubResource("BoxShape3D_pb5ao")
+
+[node name="Explosion" type="AnimatedSprite3D" parent="."]
+visible = false
+pixel_size = 0.5
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_68du8")
+frame = 1
+frame_progress = 0.223355
 
 [editable path="cartoon_plane"]
