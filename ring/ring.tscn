@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqcsods3kt1eu"]
+[gd_scene load_steps=8 format=3 uid="uid://dqcsods3kt1eu"]
 
 [ext_resource type="Script" path="res://ring/ring.gd" id="1_1gv21"]
 [ext_resource type="Texture2D" uid="uid://dbv8n5wtlngov" path="res://assets/textures/texture_09.png" id="1_2wvmf"]
 [ext_resource type="FontFile" uid="uid://cnnsyj655eody" path="res://assets/Baloo2-Medium.ttf" id="2_n038u"]
+[ext_resource type="AudioStream" uid="uid://bqasa8p2fkkyb" path="res://assets/audio/three_tone.wav" id="4_lywe8"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0dx6o"]
 height = 0.5
@@ -35,3 +36,6 @@ billboard = 1
 text = "100"
 font = ExtResource("2_n038u")
 font_size = 720
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lywe8")

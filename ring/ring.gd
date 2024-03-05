@@ -33,6 +33,7 @@ func _process(delta) -> void:
 
 func on_body_entered(body: CharacterBody3D) -> void:
     $CollisionShape3D/MeshInstance3D.hide()
+    $AudioStreamPlayer.play()
     var distance_to_center = global_position.distance_to(body.global_position)
     if distance_to_center < center_bonus_size:
         $Label3D.text = str(int(score * center_bonus_modifier))

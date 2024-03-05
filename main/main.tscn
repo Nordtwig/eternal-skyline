@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tg1w73yo6uf"]
+[gd_scene load_steps=11 format=3 uid="uid://tg1w73yo6uf"]
 
 [ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_rfj8n"]
 [ext_resource type="Script" path="res://main/main.gd" id="1_vikct"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dc2ldedf80lc1" path="res://chunk/chunk.tscn" id="3_ldo1v"]
 [ext_resource type="Script" path="res://main/camera.gd" id="4_4r3ng"]
 [ext_resource type="PackedScene" uid="uid://dxo1n3slfdsh4" path="res://ui/ui.tscn" id="6_5w3du"]
+[ext_resource type="AudioStream" uid="uid://ds7seeqfnka64" path="res://assets/audio/Riverside Ride Short Loop.wav" id="7_dfaby"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_td281"]
 panorama = ExtResource("1_rfj8n")
@@ -40,3 +41,8 @@ target_path = NodePath("../Plane")
 offset = Vector3(7, 7, 15)
 
 [node name="UI" parent="." instance=ExtResource("6_5w3du")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dfaby")
+volume_db = -12.0
+autoplay = true
