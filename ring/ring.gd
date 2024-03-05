@@ -37,10 +37,16 @@ func on_body_entered(body: CharacterBody3D) -> void:
     if distance_to_center < center_bonus_size:
         $Label3D.text = str(int(score * center_bonus_modifier))
         $Label3D.modulate = Color(1, 1, 0)
+        body.fuel += 10
+        body.score += int(score * center_bonus_modifier)
     elif distance_to_center > 3.5:
         $Label3D.text = str(int(score / 2))
+        body.fuel += 1
+        body.score += int(score / 2)
     else:
         $Label3D.text = str(score)
+        body.fuel += 2.5
+        body.score += int(score)
     $Label3D.show()
 
     var tween = create_tween().set_parallel()

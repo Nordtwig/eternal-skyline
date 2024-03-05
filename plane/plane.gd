@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 signal dead
+signal score_changed
+signal fuel_changed
 
 @export var forward_speed: float = 25.0
 @export var pitch_speed: float = 1.1
@@ -11,6 +13,29 @@ var pitch_input: float = 0
 var roll_input: float = 0
 var max_altitude: float = 20
 
+@export var fuel_burn: float = 1.0
+var max_fuel: float = 10.0
+var fuel: float = 10.0:
+    set = set_fuel
+var score: int = 0:
+    set = set_score
+
+
+# setters
+
+func set_fuel(value: float) -> void:
+    fuel = min(value, max_fuel)
+    fuel_changed.emit(fuel)
+    if fuel <= 0:
+        die()
+
+
+func set_score(value: int) -> void:
+    score = value      
+    score_changed.emit(score)
+
+
+# built-in functions
 
 func _physics_process(delta) -> void:
     get_input(delta)
@@ -26,7 +51,12 @@ func _physics_process(delta) -> void:
     move_and_slide()
     if get_slide_collision_count() > 0:
         die()
+    
+    fuel -= fuel_burn * delta
+    print(fuel)
 
+
+# custom functions
 
 func get_input(delta: float) -> void:
     pitch_input = Input.get_axis("pitch_up", "pitch_down")
@@ -35,7 +65,6 @@ func get_input(delta: float) -> void:
     if position.y >= max_altitude and pitch_input > 0:
         position.y = max_altitude
         pitch_input = 0
-
 
 
 func die() -> void:
