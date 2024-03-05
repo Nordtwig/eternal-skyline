@@ -11,6 +11,7 @@ radius = 0.965146
 size = Vector3(7.00977, 0.323975, 1.38306)
 
 [node name="Plane" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_wxngh")
 
 [node name="cartoon_plane" parent="." instance=ExtResource("1_lmeri")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cchcthl6te4c6"]
+[gd_scene load_steps=3 format=3 uid="uid://cchcthl6te4c6"]
 
 [ext_resource type="PackedScene" uid="uid://b70xb0e7n6key" path="res://plane/plane.tscn" id="1_324iq"]
+[ext_resource type="PackedScene" uid="uid://dqcsods3kt1eu" path="res://ring/ring.tscn" id="2_ibl2v"]
 
 [node name="Test" type="Node3D"]
 
@@ -8,3 +9,6 @@
 transform = Transform3D(1, 0, 0, 0, 0.922424, 0.38618, 0, -0.38618, 0.922424, 0, 4.37981, 10.2655)
 
 [node name="Plane" parent="." instance=ExtResource("1_324iq")]
+
+[node name="Ring" parent="." instance=ExtResource("2_ibl2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -115)
