@@ -57,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 shape = SubResource("CylinderShape3D_gxfe3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0707122, 0.560914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0707122, -0.618187)
 shape = SubResource("BoxShape3D_pb5ao")
 
 [node name="Explosion" type="AnimatedSprite3D" parent="."]
