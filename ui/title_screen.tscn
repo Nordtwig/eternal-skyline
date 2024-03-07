@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn4hdhgl5pkgx"]
+[gd_scene load_steps=9 format=3 uid="uid://cn4hdhgl5pkgx"]
 
 [ext_resource type="Script" path="res://ui/title_screen.gd" id="1_07s0a"]
 [ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_n33p1"]
@@ -10,6 +10,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_v7vpl"]
 font = ExtResource("2_515mq")
 font_size = 128
+outline_size = 8
+outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_plyae"]
+font = ExtResource("2_515mq")
+font_size = 26
 outline_size = 8
 outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 
@@ -58,3 +64,9 @@ texture_pressed = ExtResource("4_ex57s")
 texture_hover = ExtResource("5_dtadb")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "High Score: "
+label_settings = SubResource("LabelSettings_plyae")
+horizontal_alignment = 1

@@ -67,6 +67,9 @@ func get_input(delta: float) -> void:
 
 
 func die() -> void:
+    if score > Global.high_score:
+        Global.high_score = score
+        Global.save_score()
     set_physics_process(false)
     $cartoon_plane.hide()
     $Explosion.show()
