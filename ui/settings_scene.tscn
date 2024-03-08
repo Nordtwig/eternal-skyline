@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c4dhgwdv6iawl"]
+[gd_scene load_steps=2 format=3 uid="uid://c4dhgwdv6iawl"]
+
+[ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_ninls"]
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
@@ -8,6 +10,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1956.0
+offset_top = -360.0
+offset_right = 2140.0
+offset_bottom = 1688.0
+texture = ExtResource("1_ninls")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -15,6 +24,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
