@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4dhgwdv6iawl"]
+[gd_scene load_steps=2 format=3 uid="uid://c4dhgwdv6iawl"]
 
 [ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_ninls"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_yfran"]
-font_size = 24
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
@@ -52,13 +49,15 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 15
 
+[node name="TabBar" type="TabBar" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+tab_count = 3
+tab_0/title = "Display"
+tab_1/title = "Audio"
+tab_2/title = "Keybindings"
+
 [node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer4"]
-layout_mode = 2
-text = "Options"
-label_settings = SubResource("LabelSettings_yfran")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
