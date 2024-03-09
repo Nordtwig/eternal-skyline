@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4dhgwdv6iawl"]
+[gd_scene load_steps=3 format=3 uid="uid://c4dhgwdv6iawl"]
 
 [ext_resource type="Texture2D" uid="uid://lv8ohc1xxylm" path="res://assets/styled_sky.hdr" id="1_ninls"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfran"]
+font_size = 24
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
@@ -49,11 +52,22 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_yfran")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Screen Options"
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Fullscreen"
 
@@ -74,3 +88,10 @@ popup/item_1/text = "Medium"
 popup/item_1/id = 1
 popup/item_2/text = "High"
 popup/item_2/id = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "VSYNC"
