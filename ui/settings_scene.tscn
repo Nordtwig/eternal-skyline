@@ -51,10 +51,11 @@ theme_override_constants/separation = 15
 
 [node name="TabBar" type="TabBar" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-tab_count = 3
+tab_count = 4
 tab_0/title = "Display"
 tab_1/title = "Audio"
 tab_2/title = "Keybindings"
+tab_3/title = "Gameplay"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
