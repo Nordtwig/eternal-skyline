@@ -49,36 +49,32 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="TabBar" type="TabBar" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-tab_count = 4
-tab_0/title = "Display"
-tab_1/title = "Audio"
-tab_2/title = "Keybindings"
-tab_3/title = "Gameplay"
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Display" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display/VBoxContainer2"]
 layout_mode = 2
 text = "Screen Options"
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display/VBoxContainer2"]
 layout_mode = 2
 text = "Fullscreen"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display/VBoxContainer"]
 layout_mode = 2
 text = "Graphic Quality"
 
-[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display/VBoxContainer"]
 layout_mode = 2
 item_count = 3
 selected = 2
@@ -89,9 +85,41 @@ popup/item_1/id = 1
 popup/item_2/text = "High"
 popup/item_2/id = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer3"]
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Display/VBoxContainer3"]
 layout_mode = 2
 text = "VSYNC"
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
+layout_mode = 2
+text = "Subtitles"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
+layout_mode = 2
+text = "Show Subtitles"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+text = "Audio Source"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Headset"
+popup/item_0/id = 0
+popup/item_1/text = "Speakers"
+popup/item_1/id = 1
+popup/item_2/text = "Monitor"
+popup/item_2/id = 2
