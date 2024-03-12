@@ -93,6 +93,7 @@ layout_mode = 2
 text = "VSYNC"
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Audio"]
@@ -123,3 +124,42 @@ popup/item_1/text = "Speakers"
 popup/item_1/id = 1
 popup/item_2/text = "Monitor"
 popup/item_2/id = 2
+
+[node name="Gameplay" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer2"]
+layout_mode = 2
+text = "Screen Options"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer2"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+text = "Language"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+selected = 1
+popup/item_0/text = "Swedish"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+popup/item_2/text = "German"
+popup/item_2/id = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer3"]
+layout_mode = 2
+text = "Subtitles"
